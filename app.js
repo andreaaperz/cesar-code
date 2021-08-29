@@ -12,8 +12,6 @@ function cesarFunction(positions, word) {
         currentPos > abc.length ? newWord += abc[currentPos - 26] : newWord += abc[currentPos];
     }
 
-    console.log(word);
-
     return newWord;
 }
 
@@ -26,10 +24,6 @@ function decodeCesarFunction(positions, word) {
         currentPos > abc.length ? newWord += abc[currentPos + 26] : newWord += abc[currentPos];
     }
 
-    
-    
-
-
     return newWord;
 }
 
@@ -40,13 +34,13 @@ $(document).ready(function () {
         let frase = $("#frase").val();
         let resultado = "";
 
-        if (presionado){
+        if (presionado) {
             resultado = cesarFunction(Number(desplazamientos), frase);
         } else {
             resultado = decodeCesarFunction(Number(desplazamientos), frase);
         }
 
-        $('.resultado').text(resultado);    
+        $('.resultado').text(resultado);
     });
 
     $(".slider").click(function () {
@@ -56,6 +50,6 @@ $(document).ready(function () {
         } else {
             presionado = true
         }
-        console.log(presionado);
     });
+
 });
